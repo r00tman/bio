@@ -12,7 +12,7 @@ void bio_test() {
     vector<char> d;
     d.push_back('c');
 
-    out.write(d);
+    out.write(d, d.size());
     out.flush();
 
     file_in_stream in("./test");

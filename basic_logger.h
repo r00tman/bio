@@ -8,7 +8,7 @@
 #include <cstdio>
 #include <vector>
 
-#include "media/stream.h"
+#include "stream.h"
 
 template<class T>
 static std::string to_str(T t) {
@@ -29,7 +29,7 @@ public:
     ~basic_logger();
 
     void add_log_file(const std::string &name);
-    void add_log_stream(out_stream *stream);
+    void add_log_stream(bio::out_stream *stream);
     void write(const std::string &msg);
     void write_ln(const std::string &msg);
     template <class T>
@@ -47,7 +47,7 @@ public:
     }
 
 private:
-    std::vector<out_stream*> m_output;
+    std::vector<bio::out_stream*> m_output;
 };
 
 extern basic_logger clogger;

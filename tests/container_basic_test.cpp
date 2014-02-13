@@ -3,7 +3,7 @@
 #include <cstdio>
 #include <cassert>
 
-#include "container.h"
+#include <../container.h>
 
 int main() {
     bio::container c;

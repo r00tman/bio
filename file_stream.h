@@ -6,7 +6,7 @@
 #include <string>
 
 #include "stream.h"
-#include "common/basic_logger.h"
+#include "basic_logger.h"
 
 namespace bio {
 

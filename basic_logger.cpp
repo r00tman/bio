@@ -1,6 +1,6 @@
 #include "basic_logger.h"
 
-#include "media/file_stream.h"
+#include "file_stream.h"
 
 basic_logger clogger;
 
@@ -11,7 +11,7 @@ basic_logger::~basic_logger() {
 }
 
 void basic_logger::add_log_file(const std::string &name) {
-    file_out_stream *output = new file_out_stream();
+    bio::file_out_stream *output = new bio::file_out_stream();
 
     if ("" != name) {
         output->open(name);
@@ -19,7 +19,7 @@ void basic_logger::add_log_file(const std::string &name) {
     }
 }
 
-void basic_logger::add_log_stream(out_stream *stream) {
+void basic_logger::add_log_stream(bio::out_stream *stream) {
     m_output.push_back(stream);
 }
 
